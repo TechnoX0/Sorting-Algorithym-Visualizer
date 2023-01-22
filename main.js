@@ -10,7 +10,7 @@ function randNum(min, max) {
 }
 
 function update() {
-    
+    array = document.querySelectorAll(".bar")
 }
 
 function createArray(aSize, bWrap) {
@@ -21,12 +21,25 @@ function createArray(aSize, bWrap) {
         div.classList.add("bar")
         div.style.height = `${randNum(10, 200)}px`
         bWrap.appendChild(div)
-        console.log("hello")
     }
+
+    update()
 }
 
 function bubbleSort(arr) {
-    console.log(arr)
+    console.clear()
+    for(let i = 0; i < arr.length; i++) {
+        console.log("Itteration ", i)
+        for(let x = 0; x < arr.length - 1; x++) {
+            let temp;
+            if(arr[x].clientHeight > arr[x+1].clientHeight) {
+                temp = arr[x].style.height
+                arr[x].style.height = arr[x+1].style.height
+                arr[x+1].style.height = temp
+            }
+        }
+        console.log("\n")
+    }
 }
 
 createArrayButton.addEventListener('click', function(){createArray(arraySize, barWrap)})
