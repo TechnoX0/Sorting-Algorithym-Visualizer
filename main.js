@@ -32,7 +32,7 @@ async function bubbleSort(arr) {
     console.clear()
     for(let i = 0; i < arr.length; i++) {
         console.log("Itteration ", i)
-        for(let x = 0; x < arr.length - 1; x++) {
+        for(let x = 0; x < arr.length - i - 1; x++) {
             setTimeout(function() {
 
             }, )
