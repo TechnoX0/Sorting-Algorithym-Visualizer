@@ -22,6 +22,14 @@ html {
     background: white;
 }
 
+.selectedFirst {
+    background: green;
+}
+
+.selectedSecond {
+    background: red;
+}
+
 #wrap {
     display: flex;
     align-items: center;
