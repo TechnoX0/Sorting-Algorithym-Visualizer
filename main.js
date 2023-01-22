@@ -2,6 +2,7 @@ const arraySize = document.getElementById("array-size")
 const barWrap = document.getElementById("bar-wrap")
 const createArrayButton = document.getElementById("create-array-button")
 const sortButton = document.getElementById("sort-button")
+const sortingAlgorithm = document.getElementById("sort-algorithm")
 
 let array = document.querySelectorAll(".bar")
 
@@ -33,9 +34,6 @@ async function bubbleSort(arr) {
     for(let i = 0; i < arr.length; i++) {
         console.log("Itteration ", i)
         for(let x = 0; x < arr.length - i - 1; x++) {
-            setTimeout(function() {
-
-            }, )
             arr[x].classList.add("selectedFirst")
             arr[x+1].classList.add("selectedSecond")
             let temp;
@@ -51,6 +49,20 @@ async function bubbleSort(arr) {
     }
 }
 
-createArrayButton.addEventListener('click', function(){createArray(arraySize, barWrap)})
-sortButton.addEventListener('click', function(){bubbleSort(array)})
+async function insertionSort(arr) {
+
+}
+
 document.addEventListener("load", createArray(arraySize, barWrap));
+createArrayButton.addEventListener('click', function(){createArray(arraySize, barWrap)})
+sortButton.addEventListener('click', function(){
+    console.log(sortingAlgorithm.value)
+    switch(sortingAlgorithm.value) {
+        case 'bubbleSort':
+            bubbleSort(array)
+            break;
+        default:
+            console.log("Something went wrong.. maybe")
+            break;
+    }
+})
